@@ -1,0 +1,249 @@
+body {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(closest-side, rgb(255, 55, 0), rgb(255, 140, 0), rgb(255, 55, 0));
+}
+
+#muteImage {
+  position: absolute;
+  top: 5px;
+  z-index: 1000;
+}
+
+#muteImage:hover {
+  fill: white;
+}
+
+.score {
+  display: flex;
+  justify-content: flex-end;
+  visibility: hidden;
+}
+
+@font-face {
+  font-family: PixelCowboy;
+  src: url('./fonts/PixelCowboy.otf') format("opentype");
+}
+@font-face {
+  font-family: Reward;
+  src: url('./fonts/Reward.ttf') format('truetype');
+}
+@font-face {
+  font-family: FancyCowboy;
+  src: url('./fonts/Braceletvictorian-DGld.ttf') format('truetype');
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  font-family: PixelCowboy, monospace;
+  font-size: 40px;
+  color: rgb(192, 169, 2);
+  -webkit-text-fill-color: rgb(164, 11, 11);
+  -webkit-text-stroke: 3px;
+}
+
+.menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  opacity: 0.7;
+  border-radius: 20px;
+  z-index: 5;
+}
+
+.text {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+  font-family: PixelCowboy;
+  color:rgb(192, 169, 2);
+}
+
+.start {
+  cursor: pointer;
+}
+.difficulty {
+  display: none;
+  cursor: pointer;
+}
+.reset {
+  display: none;
+  cursor: pointer;
+}
+.playagain {
+  display: none;
+  cursor: pointer;
+}
+.click:hover {color:rgb(235, 208, 3);}
+.click:active{  color:rgb(125, 111, 1);}
+
+
+.gradient-border {
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -160px;
+  margin-top: -160px;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fccd4d+9,fceabb+16,fceabb+16,fccd4d+21,f8b500+27,fbdf93+32,fbdf93+36,fbdf93+36,f8b500+55,f8b500+55,f8b500+61,f8b500+61,fccd4d+64,fbdf93+69,fbdf93+69,fccd4d+73,fccd4d+75,f8b500+78,fccd4d+86,fceabb+88,fccd4d+91,fccd4d+95,fbdf93+100 */
+background: #fccd4d; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #fccd4d 9%, #fceabb 16%, #fceabb 16%, #fccd4d 21%, #f8b500 27%, #fbdf93 32%, #fbdf93 36%, #fbdf93 36%, #f8b500 55%, #f8b500 55%, #f8b500 61%, #f8b500 61%, #fccd4d 64%, #fbdf93 69%, #fbdf93 69%, #fccd4d 73%, #fccd4d 75%, #f8b500 78%, #fccd4d 86%, #fceabb 88%, #fccd4d 91%, #fccd4d 95%, #fbdf93 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  #fccd4d 9%,#fceabb 16%,#fceabb 16%,#fccd4d 21%,#f8b500 27%,#fbdf93 32%,#fbdf93 36%,#fbdf93 36%,#f8b500 55%,#f8b500 55%,#f8b500 61%,#f8b500 61%,#fccd4d 64%,#fbdf93 69%,#fbdf93 69%,#fccd4d 73%,#fccd4d 75%,#f8b500 78%,#fccd4d 86%,#fceabb 88%,#fccd4d 91%,#fccd4d 95%,#fbdf93 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  #fccd4d 9%,#fceabb 16%,#fceabb 16%,#fccd4d 21%,#f8b500 27%,#fbdf93 32%,#fbdf93 36%,#fbdf93 36%,#f8b500 55%,#f8b500 55%,#f8b500 61%,#f8b500 61%,#fccd4d 64%,#fbdf93 69%,#fbdf93 69%,#fccd4d 73%,#fccd4d 75%,#f8b500 78%,#fccd4d 86%,#fceabb 88%,#fccd4d 91%,#fccd4d 95%,#fbdf93 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fccd4d', endColorstr='#fbdf93',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+height: 320px;
+width: 320px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 20px;
+z-index: 4;
+}
+
+.gradient-border:after {
+  position: relative;
+  display: block;
+  content: '';
+  height: 300px;
+  width: 300px;
+  background-color: rgb(255, 98, 0);
+  border-radius: 20px;
+  opacity: .95;
+}
+
+.poster {
+  position: absolute;
+  top: 0px;
+  background-color: black;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.wantedImage {
+  height: 90%;
+}
+
+.countdown {
+  font-family: PixelCowboy, monospace;
+  color: rgb(192, 169, 2);
+  -webkit-text-fill-color: rgb(164, 11, 11);
+  -webkit-text-stroke: 3px;
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: -50px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+}
+
+#num3 {
+  font-size: 300px;
+  display:none;
+}
+#num2 {
+  font-size: 300px;
+  display:none;
+}
+#num1 {
+  font-size: 300px;
+  display:none;
+}
+#victory{
+  font-size: 100px;
+  display:none;
+}
+#gameOver{
+  margin-top: 35px;
+  font-size: 100px;
+  display:none;
+}
+
+
+h3 {
+  font-family: Reward, monospace;
+  color: rgb(128, 10, 10);
+  position: absolute;
+  top: 18%;
+  font-size: 14vh;
+}
+
+.wantedMole {
+  position: absolute;
+  filter: grayscale(100%);
+  top: 35%;
+  height: 20vh;
+}
+
+h4 {
+  font-family: FancyCowboy, monospace;
+  color: rgb(128, 10, 10);
+  position: absolute;
+  font-size: 8vh;
+  top: 55%;
+}
+
+h5 {
+  font-family: monospace, sans-serif;
+  font-weight: 800;
+  color: black;
+  position: absolute;
+  font-size: 3vh;
+  top: 80%;
+}
+
+.game {
+  height: 500px;
+  width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.hole {
+  flex: 1 0 33.33%;
+  position: relative;
+  overflow: hidden;
+  transition: all 4.0s;
+  right: 2000px;
+}
+.right {
+  right: 0px; 
+}
+
+.dirt {
+  background: url(images/dirt.svg) bottom center no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+}
+
+.mole {
+  background: url('images/mole.svg') bottom center no-repeat;
+  background-size: 60%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+}
+.up {
+  top: 0;
+  transition: all 1.0s
+}
+

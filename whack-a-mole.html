@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="whack-a-mole.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <a onClick="toggleMuted()"><img id="muteImage" src="images/speaker.svg"></a>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2 class="score" visibility="hidden">Score: $0</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col title">
+        <h1>Whack-a-Rider</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu">
+    <div class="text">
+      <h2 class="start click">1 player</h2>
+      <h2 class="start click">2 player</h2>
+      <h2 class="start click">options</h2>
+      <h2 class ='difficulty click' display="none">Easy</h2>
+      <h2 class ='difficulty click' display="none">Normal</h2>
+      <h2 class ='difficulty click' display="none">Hard</h2>
+      <h2 class ='playagain click' onClick="playAgain()" display="none">Retry</h2>
+      <h2 class ='reset click' onClick="reset()" display="none">Quit</h2>
+
+    </div>
+  </div>
+  <div class="gradient-border"></div>
+
+  <div class="poster hidePoster">
+    <img class='wantedImage' src="images/wanted-poster.png" alt="">
+    <h3>Reward</h3>
+    <img class='wantedMole' src="images/mole.svg" alt="">
+    <h4 id="reward">$10,000</h4>
+    <h5>DEAD OR ALIVE</h5>
+  </div>
+
+  <div class="countdown">
+    <h2 id="num3">3</h2>
+    <h2 id="num2">2</h2>
+    <h2 id="num1">1</h2>
+    <h2 id="victory">Victory</h2>
+    <h2 id="gameOver" class="text-center">Game Over</h2>
+  </div>
+
+  <div class="container-fluid game">
+    <div class="hole">
+      <div class="dirt"></div>
+      <div class="mole mole1"></div>
+    </div>
+    <div class="hole">
+      <div class="dirt"></div>
+      <div class="mole mole2"></div>
+    </div>
+    <div class="hole">
+      <div class="dirt"></div>
+      <div class="mole mole3"></div>
+    </div>
+    <div class="hole">
+      <div class="dirt"></div>
+      <div class="mole mole4"></div>
+    </div>
+    <div class="hole">
+      <div class="dirt"></div>
+      <div class="mole mole5"></div>
+    </div>
+    <div class="hole">
+      <div class="dirt"></div>
+      <div class="mole mole6"></div>
+    </div>
+  </div>
+  <audio id="player" muted autoplay loop>
+    <source src="audio-files/01-main-menu.mp3" type="audio/mp3">
+  </audio>
+  <audio id="hit">
+    <source src="audio-files/10-mole-damage.wav" type="audio/wav">
+  </audio>
+  <script>import bootstrap from bootstrap</script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="whack-a-mole.js"></script>
+</body>
+</html>
